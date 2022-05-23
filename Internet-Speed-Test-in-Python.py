@@ -84,8 +84,8 @@ country.place(x=10,y=190)
 c = tk.Label(root,text="" , bg="#1a1a1a" , fg ="pink" , font=font)
 c.place(x=270,y=190)
 
-sponsor=tk.Label(root,text="Sponsor :" , bg="#1a1a1a" , fg="Chartreuse" , font=font)
-sponsor.place(x=10,y=250)
+isp=tk.Label(root,text="ISP :" , bg="#1a1a1a" , fg="Chartreuse" , font=font)
+isp.place(x=10,y=250)
 s = tk.Label(root,text="" , bg="#1a1a1a" , fg ="Chartreuse" , font=font)
 s.place(x=270,y=250)
 
