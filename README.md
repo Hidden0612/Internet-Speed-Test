@@ -1,5 +1,5 @@
 ## Internet-Speed-Test
-A simple gui to check internet status
+A simple GUI to check internet status
 - Download Speed
 - Upload Speed 
 - Ping
