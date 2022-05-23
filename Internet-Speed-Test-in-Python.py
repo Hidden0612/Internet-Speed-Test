@@ -1,11 +1,13 @@
 import threading
-import speedtest
 import tkinter as tk
 from tkinter import messagebox
+
+import speedtest
+
 #================#
 sp = speedtest.Speedtest()
 root=tk.Tk()
-root.geometry("580x520")
+root.geometry("580x540")
 root.title("Speed Test")
 root.configure(bg="#1a1a1a")
 font=("Arial",20)
@@ -23,7 +25,7 @@ class Task(threading.Thread):
 def check_start():
     global l
     l=tk.Label(root,text="Speed Test Internet...", bg="#1a1a1a" , fg="white" , font=font)
-    l.place(x=180,y=420)
+    l.place(x=155,y=415)
     d.configure(text='Checking...')
     u.configure(text='Checking...')
     p.configure(text='Checking...')
@@ -37,8 +39,8 @@ def check_start():
 def check():
     check_start()
 
-    d.configure(text=f'{(sp.download()//10**6)} Mbps')
-    u.configure(text=f'{sp.upload()//10**6} Mbps')
+    d.configure(text=f'{"%.2f" % (sp.download()/10**6)} Mbps')
+    u.configure(text=f'{"%.2f" % (sp.upload()/10**6)} Mbps')
 
     servernames =[]
     sp.get_servers(servernames)
@@ -56,7 +58,7 @@ def check():
     h.configure(text=lis[8])
     i.configure(text=sp.config['client']['ip'])
     l.configure(text='Successfull !' , font=font,fg='green')
-    l.place(x=240,y=420)
+    l.place(x=212,y=415)
 
     b["state"] = "normal"
 
@@ -99,5 +101,5 @@ i.place(x=270,y=360)
 
 
 b=tk.Button(root,text="Start" , command=lambda: Task(root, check) ,cursor ='hand2', bg="yellow" , fg="black")
-b.place(x=30,y=442,width=520,height=50)
+b.place(x=30,y=460,width=520,height=50)
 root.mainloop()
